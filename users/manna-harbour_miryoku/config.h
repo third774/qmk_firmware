@@ -9,10 +9,12 @@
 
 // default but used in macros
 #undef TAPPING_TERM
-#define TAPPING_TERM 170
+// 200ms = 60wpm
+#define TAPPING_TERM 200
 
 // Prevent normal rollover on alphas from accidentally triggering mods.
 #define IGNORE_MOD_TAP_INTERRUPT
+// Allow nested taps to register instantly
 #define PERMISSIVE_HOLD
 
 // Enable rapid switch from tap to hold, disables double tap hold auto-repeat.
@@ -36,11 +38,11 @@
 #define MOUSEKEY_TIME_TO_MAX    64
 
 #define BILATERAL_COMBINATIONS_LIMIT_CHORD_TO_N_KEYS 4 /* GUI, Alt, Ctrl, Shift */
-#define BILATERAL_COMBINATIONS_DELAY_MODS_THAT_MATCH MOD_MASK_GUI
-#define BILATERAL_COMBINATIONS_DELAY_MATCHED_MODS_BY 120  /* ms */
-#define BILATERAL_COMBINATIONS_ALLOW_CROSSOVER_AFTER 80   /* ms */
+// Must be > 0, but don't want this limited really at all
+#define BILATERAL_COMBINATIONS_ALLOW_CROSSOVER_AFTER 1   /* ms */
 #define BILATERAL_COMBINATIONS_ALLOW_SAMESIDED_AFTER 3000 /* ms */
-#define BILATERAL_COMBINATIONS_TYPING_STREAK_TIMEOUT 160  /* ms */
+// 200ms = 60wpm
+#define BILATERAL_COMBINATIONS_TYPING_STREAK_TIMEOUT 200  /* ms */
 #define BILATERAL_COMBINATIONS_TYPING_STREAK_MODMASK (~MOD_MASK_SHIFT)
 #define BILATERAL_COMBINATIONS
 
